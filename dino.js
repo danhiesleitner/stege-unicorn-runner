@@ -33,6 +33,12 @@ export function setupDino() {
   setCustomProperty(dinoElem, "--bottom", 0)
   document.removeEventListener("keydown", onJump)
   document.addEventListener("keydown", onJump)
+  document.removeEventListener("click", onJump);
+  document.addEventListener("click", onJump);
+
+  document.removeEventListener("touchstart", onJump);
+  document.addEventListener("touchstart", onJump);
+
 }
 
 export function updateDino(delta, speedScale) {
