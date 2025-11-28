@@ -5,7 +5,7 @@ import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 30
-const SPEED_SCALE_INCREASE = 0.00001
+const SPEED_SCALE_INCREASE = 0.000025
 
 const worldElem = document.querySelector("[data-world]")
 const scoreElem = document.querySelector("[data-score]")
@@ -15,6 +15,9 @@ const stopScreenElem = document.querySelector("[data-end-screen]")
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
 document.addEventListener("keydown", handleStart, { once: true })
+document.addEventListener("touchstart", handleStart, { once: true });
+document.addEventListener("click", handleStart, { once: true });
+
 
 let lastTime
 let speedScale
